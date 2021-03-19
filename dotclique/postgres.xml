@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<Container version="3">
+    <TemplateURL>https://raw.githubusercontent.com/dotclique/docker-templates/master/dotclique/postgres.xml</TemplateURL>
+    <Date>2021-03-19</Date>
+    <Beta>False</Beta>
+    <Name>postgres</Name>
+    <Project>https://www.postgresql.org/</Project>
+    <Repository>postgres</Repository>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Overview>Postgres Database</Overview>
+    <Icon>https://www.postgresql.org/media/img/about/press/elephant.png</Icon>
+    <Description>
+PostgreSQL database[br]
+  [b][u][span style='color: #E80000;']Directories[/span][/u][/b][br]
+  [b]/data[/b] Where postgres should store databases and configuration files[br]
+  [b]/initdb[/b] Where postgres should load initialization scripts and sql files from[br]
+  [br]
+  [b][u][span style='color: #E80000;']Variables[/span][/u][/b][br]
+  [b]POSTGRES_USER[/b] Username for the Postgres root/admin user[br]
+  [b]POSTGRES_PASSWORD[/b] Password for the Postgres root/admin user[br]
+  [b]POSTGRES_DB[/b] Name for the default database created upon startup. By default the same as the Username[br]
+  [b]PGDATA[/b] Sets the data directory. By default uses the "/data"-folder[br]
+  </Description>
+    <Networking>
+        <Mode>bridge</Mode>
+        <Publish>
+            <Port>
+                <HostPort>5432</HostPort>
+                <ContainerPort>5432</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+        </Publish>
+    </Networking>
+    <Data>
+        <Volume>
+            <HostDir>/mnt/user/appdata/postgres/data</HostDir>
+            <ContainerDir>/data</ContainerDir>
+            <Mode>rw</Mode>
+        </Volume>
+        <Volume>
+            <HostDir>/mnt/user/appdata/postgres/initdb</HostDir>
+            <ContainerDir>/docker-entrypoint-initdb.d</ContainerDir>
+            <Mode>r</Mode>
+        </Volume>
+    </Data>
+    <Environment>
+        <Variable>
+            <Name>POSTGRES_USER</Name>
+            <Value>postgres</Value>
+        </Variable>
+        <Variable>
+            <Name>POSTGRES_PASSWORD</Name>
+            <Value>enter_a_password_here</Value>
+        </Variable>
+        <Variable>
+            <Name>POSTGRES_DB</Name>
+            <Value>postgres</Value>
+        </Variable>
+        <Variable>
+            <Name>PGDATA</Name>
+            <Value>/data</Value>
+        </Variable>
+    </Environment>
+</Container>
