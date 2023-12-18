@@ -29,15 +29,59 @@ https://docs.linuxserver.io/images/docker-wireguard/
     <Environment>
         <Variable>
             <Name>PUID</Name>
-            <Value>99</Value>
+            <Value>1000</Value>
         </Variable>
         <Variable>
             <Name>PGID</Name>
-            <Value>100</Value>
+            <Value>1000</Value>
         </Variable>
         <Variable>
             <Name>TZ</Name>
             <Value>Etc/UTC</Value>
         </Variable>
+        <Variable>
+            <Name>SERVERURL</Name>
+            <Value>wireguard.domain.com</Value>
+        </Variable>
+        <Variable>
+            <Name>SERVERPORT</Name>
+            <Value>51820</Value>
+        </Variable>
+        <Variable>
+            <Name>PEERS</Name>
+            <Value>1</Value>
+        </Variable>
+        <Variable>
+            <Name>PEERDNS</Name>
+            <Value>auto</Value>
+        </Variable>
+        <Variable>
+            <Name>INTERNAL_SUBNET</Name>
+            <Value>192.168.1.0</Value>
+        </Variable>
+        <Variable>
+            <Name>ALLOWEDIPS</Name>
+            <Value>192.168.1.0/24</Value>
+        </Variable>
+        <Variable>
+            <Name>PERSISTENTKEEPALIVE_PEERS</Name>
+            <Value></Value>
+        </Variable>
+        <Variable>
+            <Name>LOG_CONFS</Name>
+            <Value>true</Value>
+        </Variable>
     </Environment>
+    <Data>
+        <Volume>
+            <HostDir>/mnt/user/appdata/wireguard/config</HostDir>
+            <ContainerDir>/config</ContainerDir>
+            <Mode>rw</Mode>
+        </Volume>
+        <Volume>
+            <HostDir>/lib/modules</HostDir>
+            <ContainerDir>/lib/modules</ContainerDir>
+            <Mode>r</Mode>
+        </Volume>
+    </Data>
 </Container>
