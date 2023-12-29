@@ -3,7 +3,7 @@
     <TemplateURL>https://raw.githubusercontent.com/dotclique/docker-templates/master/dotclique/duplicati-official.xml</TemplateURL>
     <Date>2023-12-29</Date>
     <Beta>False</Beta>
-    <Name>duplicati</Name>
+    <Name>dotclique-duplicati</Name>
     <Project>https://www.duplicati.com/</Project>
     <Repository>duplicati/duplicati</Repository>
     <Network>bridge</Network>
