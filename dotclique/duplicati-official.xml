@@ -13,6 +13,7 @@
     <Description>
 Template running the official Duplicati docker image
     </Description>
+    <WebUI>http://[IP]:[PORT:8200]/</WebUI>
     <Networking>
         <Mode>bridge</Mode>
         <Publish>
