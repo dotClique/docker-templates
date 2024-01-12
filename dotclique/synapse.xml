@@ -37,14 +37,6 @@ https://hub.docker.com/r/matrixdotorg/synapse
             <Value>Etc/UTC</Value>
         </Variable>
         <Variable>
-            <Name>SYNAPSE_SERVER_NAME</Name>
-            <Value>domainname.example</Value>
-        </Variable>
-        <Variable>
-            <Name>SYNAPSE_REPORT_STATS</Name>
-            <Value>no</Value>
-        </Variable>
-        <Variable>
             <Name>SYNAPSE_HTTP_PORT</Name>
             <Value>8008</Value>
         </Variable>
