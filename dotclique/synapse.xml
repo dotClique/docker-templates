@@ -3,8 +3,8 @@
     <TemplateURL>https://raw.githubusercontent.com/dotclique/docker-templates/master/dotclique/synapse.xml</TemplateURL>
     <Date>2023-12-14</Date>
     <Beta>False</Beta>
-    <Name>Wireguard</Name>
-    <Project>https://www.wireguard.com/</Project>
+    <Name>Synapse</Name>
+    <Project>https://matrix.org/</Project>
     <Repository>matrixdotorg/synapse</Repository>
     <Network>host</Network>
     <Privileged>false</Privileged>
